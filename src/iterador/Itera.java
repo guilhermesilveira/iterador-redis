@@ -54,7 +54,9 @@ public class Itera implements Runnable {
 			}
 		}
 		try {
-			ImageIO.write(ret, "png", new File("output/itera_" + a + "_" + b
+			File dir = new File("output");
+			dir.mkdirs();
+			ImageIO.write(ret, "png", new File(dir, "itera_" + a + "_" + b
 					+ ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
