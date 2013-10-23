@@ -26,10 +26,6 @@ public class ParallelCalc {
 			Long missing = jedis.llen("PARAMS");
 			if (missing == 0)
 				break;
-			Map<String, String> stats = jedis.hgetAll("STATS");
-			for(String key : stats.keySet()) {
-				System.out.println(key + ":" + stats.get(key));
-			}
 			System.out.println("Missing " + missing);
 			try {
 				Thread.sleep(1000);
