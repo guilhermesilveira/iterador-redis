@@ -13,7 +13,6 @@ public class ParallelCalc {
 	public static void main(String[] args) {
 
 		final Jedis jedis = new Jedis("localhost");
-		jedis.del("PARAMS");
 
 		double b = 0.2;
 		int vezes = (int) ((MAX - MIN) / DELTA);
