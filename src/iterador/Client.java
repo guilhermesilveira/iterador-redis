@@ -4,7 +4,7 @@ import redis.clients.jedis.Jedis;
 
 public class Client {
 
-	static int THREADS = 16;
+	static int THREADS = 8;
 
 	public static void main(String[] args) {
 		for (int i = 0; i < THREADS; i++) {
@@ -18,6 +18,7 @@ public class Client {
 		@Override
 		public void run() {
 			Jedis jedis = new Jedis("localhost");
+			System.out.println("Ready...");
 			try {
 				while (true) {
 					String param = jedis.lpop("PARAMS");

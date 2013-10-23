@@ -53,12 +53,12 @@ public class Itera implements Runnable {
 				}
 			}
 		}
-//		try {
-//			ImageIO.write(ret, "png", new File("output/itera_" + a + "_" + b
-//					+ ".png"));
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			ImageIO.write(ret, "png", new File("output/itera_" + a + "_" + b
+					+ ".png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

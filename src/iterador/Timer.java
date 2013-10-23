@@ -10,15 +10,19 @@ public class Timer {
 		
 	}
 	public void time(Runnable r) {
-		long start = System.currentTimeMillis();
-		r.run();
-		long end = System.currentTimeMillis();
-		tempos += (end- start) / 1000.0;
+		tempos += countTime(r);
 		t++;
 		if(t==100) {
 			double estimado = (tempos / t) * vezes;
 			System.out.println("Tempo estimado: " + estimado);
 		}
+	}
+	
+	public static double countTime(Runnable r) {
+		long start = System.currentTimeMillis();
+		r.run();
+		long end = System.currentTimeMillis();
+		return (end- start) / 1000.0;
 	}
 
 }
